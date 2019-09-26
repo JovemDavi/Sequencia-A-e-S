@@ -87,7 +87,7 @@ int main()
     char output[20]; // dpois precisa fazer o tamanho se adaptar
     char ultimaSequencia = 'A';
     
-    int j=0;
+    int j=0, contador=1;
     for(int i = 0; i < tamanhoDaSequencia; i++){
         
         if(ultimaSequencia == 'A') {
@@ -101,8 +101,13 @@ int main()
                output[j] = char1S[0];
                output[j + 1] = char1S[1];
            }
-           
+           contador++;
            ultimaSequencia = 'B';
+           for( int i = 0; i < 10; i++) {
+                if(output[i]=='0'||output[i]=='1'||output[i]=='A'||output[i]=='S')
+                cout << output[i];
+            }
+        cout << endl;
             
         }
         
@@ -111,30 +116,30 @@ int main()
             if(Sequencia[i] == '0'){
                 output[j] = char0S[0];
                 output[j + 1] = char0S[1];
+                
             }
             
             if(Sequencia[i] == '1'){
                 output[j] = char1A[0];
                 output[j + 1] = char1A[1];
             }
-            
+            contador++;
             ultimaSequencia = 'A';
-        }
-        for( int i = 0; i < 10; i++) {
-            if(output[i]=='1'||output[i]=='0')
+            for( int i = 0; i < contador; i++) {
+                if(output[i]=='0'||output[i]=='1'||output[i]=='A'||output[i]=='S')
                 cout << output[i];
+            }
+        cout << endl;
         }
         cout << endl;
         j++;
      }
     
       cout << "\nOutput__________\n";
-        
-        for( int i = 0; i < 20; i++) {
-            if(output[i]=='1'||output[i]=='0')
+        for( int i = 0; i < contador; i++) {
+                if(output[i]=='0'||output[i]=='1')
                 cout << output[i];
-        }
-
+            }
         cout << endl;
 
     return 0;
